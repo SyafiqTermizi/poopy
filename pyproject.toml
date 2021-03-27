@@ -8,6 +8,7 @@ authors = ["syafiq <ahmadsyafiq93@gmail.com>"]
 python = "^3.8"
 Django = "^3.1.7"
 psycopg2-binary = "^2.8.6"
+djangorestframework = "^3.12.4"
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"

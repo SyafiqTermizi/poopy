@@ -30,9 +30,14 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOST", "").split(",")
 
 
 # Application definition
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "poopy.poops.apps.PoopsConfig",
+    "poopy.feedings.apps.FeedingsConfig",
+]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
 
 DJANGO_APPS = [
     "django.contrib.admin",
