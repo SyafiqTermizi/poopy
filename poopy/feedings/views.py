@@ -7,7 +7,4 @@ from .serializers import FeedingSerializer
 
 class ListCreateFeedings(ListCreateAPIView):
     serializer_class = FeedingSerializer
-    queryset = Feeding.objects.filter(created_at__gte=timezone.now().date())
-
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
+    queryset = Feeding.objects.all()
