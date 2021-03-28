@@ -50,9 +50,9 @@ export const PoopCounter = () => {
               />
             </div>
             <div className="col-10">
-              <h5 className="card-title">Poops</h5>
+              <h5 className="card-title">Diaper change</h5>
               <p className="card-text">
-                <b>Last poop: </b>{" "}
+                <b>Last diaper change: </b>{" "}
                 {dayjs(lastPoopTime.created_at).format("HH:mm")} (
                 {dayjs(lastPoopTime.created_at).fromNow()})
               </p>
@@ -62,7 +62,7 @@ export const PoopCounter = () => {
                 }}
                 className="btn btn-outline-dark"
               >
-                Just pooped
+                Just changed
               </a>
             </div>
           </div>
