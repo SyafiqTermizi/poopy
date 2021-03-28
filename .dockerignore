@@ -23,3 +23,4 @@ docker/Dockerfile
 .gitignore
 README.md
 node_modules
+static/ts

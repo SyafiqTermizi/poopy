@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from "axios";
 const createAxios = () => {
   const baseURL =
     process.env.NODE_ENV === "production"
-      ? "https://syafiqtermizi.com"
+      ? "https://wafiqsufyan.tk"
       : "http://localhost:8000";
 
   const axiosConfig: AxiosRequestConfig = {

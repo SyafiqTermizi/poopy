@@ -1,0 +1,35 @@
+version: "3"
+
+volumes:
+  poopy_staticfiles_volume: {}
+  poopy_db_volume: {}
+
+services:
+  poopy_db_prod:
+    image: postgres:13-alpine
+    env_file:
+      - ../.env
+    volumes:
+      - poopy_db_volume:/var/lib/postgresql/data:Z
+
+  poopy_prod:
+    build:
+      context: ../
+      dockerfile: ./docker/prod.Dockerfile
+    command: poetry run gunicorn -c python:poopy.gunicorn poopy.wsgi:application
+    env_file:
+      - ../.env
+    depends_on:
+      - poopy_db_prod
+    volumes:
+      - poopy_staticfiles_volume:/app/staticfiles:z
+
+  nginx:
+    image: nginx:1.19-alpine
+    ports:
+      - 8000:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - poopy_staticfiles_volume:/app/staticfiles:z
+    depends_on:
+      - poopy_prod
