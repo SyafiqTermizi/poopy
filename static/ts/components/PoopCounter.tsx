@@ -53,8 +53,8 @@ export const PoopCounter = () => {
               <h5 className="card-title">Diaper change</h5>
               <p className="card-text">
                 <b>Last diaper change: </b>{" "}
-                {dayjs(lastPoopTime.created_at).format("HH:mm")} (
-                {dayjs(lastPoopTime.created_at).fromNow()})
+                {dayjs(lastPoopTime?.created_at).format("HH:mm")} (
+                {dayjs(lastPoopTime?.created_at).fromNow()})
               </p>
               <a
                 onClick={() => {

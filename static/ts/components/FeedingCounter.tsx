@@ -53,8 +53,8 @@ export const FeedingCounter = () => {
               <h5 className="card-title">Feeds</h5>
               <p className="card-text">
                 <b>Last feed: </b>{" "}
-                {dayjs(lastFeedTime.created_at).format("HH:mm")} (
-                {dayjs(lastFeedTime.created_at).fromNow()})
+                {dayjs(lastFeedTime?.created_at).format("HH:mm")} (
+                {dayjs(lastFeedTime?.created_at).fromNow()})
               </p>
               <a
                 onClick={() => {
